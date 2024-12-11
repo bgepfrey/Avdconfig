@@ -12,4 +12,8 @@ Invoke-WebRequest -Uri $URL -OutFile $ZIP -ErrorAction 'Stop'
 Expand-Archive -LiteralPath $ZIP -Force -ErrorAction 'Stop'
     
 # Run VDOT
-& .\VDOT\Virtual-Desktop-Optimization-Tool-main\Windows_VDOT.ps1 -AcceptEULA -Restart
+& .\VDOT\Virtual-Desktop-Optimization-Tool-main\Windows_VDOT.ps1 -Optimizations AppxPackages, RemoveOneDrive-AcceptEULA -Restart
+
+winget install Fortinet.FortiClientVPN
+
+Get-AppXPackage *WindowsStore* -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\\AppXManifest.xml”}
