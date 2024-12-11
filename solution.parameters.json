@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Location": {
+            "value": "eastus"
+        },
+        "NamePrefix": {
+            "value": "ESLAVD"
+        },
+        "NumberOfVms": {
+            "value": 1
+        },
+        "ScriptUri": {
+            "value": "https://github.com/bgepfrey/Avdconfig/blob/main/script.ps1"
+        },
+        "VirtualMachineIndex": {
+            "value": 0
+        }
+    }
+}
